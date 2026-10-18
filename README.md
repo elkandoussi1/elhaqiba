@@ -1,13 +1,14 @@
 # 💫ْ عَنِّي  
-**حقيبة التربية الإسلامية** https://elhaqiba.blogspot.com/  
+**حقيبة التربية الإسلامية** https://elkandoussi.blogspot.com/?m=1  
 مرحباً، اسمي **أحمد القندوسي**، أنا مدون مبتدئ أشارك محتوى تعليميًا وإبداعيًا وملهمًا. 
 
 ## 🌐 مواقع التواصل الاجتماعي:
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://www.instagram.com/ahmed_el_kandoussi?igsh=MWpqYnFsMW5tdDh5Mw==) 
-[![TikTok](https://img.shields.io/badge/TikTok-%23000000.svg?logo=TikTok&logoColor=white)](https://www.tiktok.com/@elkandoussi.ahmed) 
-[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://youtube.com/channel/UC9Vn56jRWt0Zhm2tp4Q2Zug) 
-[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?logo=telegram&logoColor=white)](https://t.me/elkandoussi) 
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://www.instagram.com/elkandoussicom) 
+[![TikTok](https://img.shields.io/badge/TikTok-%23000000.svg?logo=TikTok&logoColor=white)](https://www.tiktok.com/@elkandoussicom) 
+[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://youtube.com/channel/UC9Vn56jRWt0Zhm2tp4Q2Zug?sub_confirmation=1) 
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?logo=telegram&logoColor=white)](https://t.me/elkandoussicom) 
 [![Pinterest](https://img.shields.io/badge/Pinterest-%23E60023.svg?logo=Pinterest&logoColor=white)](https://pin.it/6DI0OJQCt)  
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-%2325D366.svg?logo=whatsapp&logoColor=white)](https://whatsapp.com/channel/0029Va1DqDJ23n3bLDCNUB1M)  
 
 # 💻 البيئة التقنية:
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat&logo=css3&logoColor=white) 
