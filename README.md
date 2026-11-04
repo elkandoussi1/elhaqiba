@@ -1,4 +1,4 @@
-<div align="center">
+<div align="center" markdown="1">
 
 # 📚 الحقيبة
 
@@ -14,7 +14,7 @@
 
 </div>
 
-<div dir="rtl">
+<div dir="rtl" markdown="1">
 
 ## ✦ عن الحقيبة
 
