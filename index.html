@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الحقيبة · أدوات عربية لمدونات Blogger</title>
+<meta name="description" content="حقيبة من أدوات CSS وJavaScript المعربة لقالب Bookmark على Blogger: بطاقات المقالات، فهرس المحتويات، المقالات ذات الصلة، مشغل الموسيقى، وحماية الروابط. تثبت بنقرة عبر jsDelivr.">
+<meta name="author" content="أحمد القندوسي">
+<meta name="theme-color" content="#0b5c4f">
+<link rel="canonical" href="https://elkandoussi1.github.io/elhaqiba/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_MA">
+<meta property="og:site_name" content="الحقيبة">
+<meta property="og:title" content="الحقيبة · أدوات عربية لمدونات Blogger">
+<meta property="og:description" content="ملفات CSS وJavaScript جاهزة لتخصيص قالب Blogger وتعريبه: بطاقات، فهرس، مقالات ذات صلة، مشغل موسيقى، وحماية روابط.">
+<meta property="og:url" content="https://elkandoussi1.github.io/elhaqiba/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="الحقيبة · أدوات عربية لمدونات Blogger">
+<meta name="twitter:description" content="ملفات CSS وJavaScript جاهزة لتخصيص قالب Blogger وتعريبه.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b5c4f'/%3E%3Cpath d='M18 16h12a5 5 0 0 1 5 5v27a4 4 0 0 0-4-4H18z' fill='%23f5f3ec'/%3E%3Cpath d='M46 16H34a5 5 0 0 0-5 5v27a4 4 0 0 1 4-4h13z' fill='%23d4a017'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<script>
+(function () {
+  try {
+    if (localStorage.getItem('haqiba-theme') === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  } catch (e) {}
+  document.documentElement.classList.add('js');
+})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "الحقيبة",
+  "url": "https://elkandoussi1.github.io/elhaqiba/",
+  "description": "قوالب وأدوات معربة لمدونات Blogger التعليمية.",
+  "inLanguage": "ar",
+  "author": {
+    "@type": "Person",
+    "name": "أحمد القندوسي",
+    "url": "https://github.com/elkandoussi1"
+  }
+}
+</script>
+<style>
+:root{
+  --font-body:"Tajawal","Segoe UI",Tahoma,Arial,sans-serif;
+  --font-display:"Amiri","Tajawal",serif;
+  --font-mono:ui-monospace,"SFMono-Regular","Cascadia Code",Consolas,monospace;
+  --brand:#0b5c4f;
+  --brand-2:#0f7364;
+  --gold:#b8860b;
+  --gold-bright:#d4a017;
+  --accent:#0b5c4f;
+  --gold-text:#8a6508;
+  --ink:#14201d;
+  --muted:#5b6b66;
+  --cream:#f5f3ec;
+  --cream-2:#f9f7f1;
+  --surface:#fffefb;
+  --sand:#ebe6d8;
+  --field:#f7f5ee;
+  --line:rgba(11,92,79,.12);
+  --line-strong:rgba(11,92,79,.3);
+  --green-tint:rgba(11,92,79,.075);
+  --header-bg:rgba(245,243,236,.9);
+  --shadow:0 24px 60px -32px rgba(6,46,40,.45);
+  --shadow-sm:0 12px 26px -18px rgba(6,46,40,.35);
+}
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --accent:#4fd1b5;
+  --gold-text:#e3b341;
+  --ink:#e9f2ee;
+  --muted:#9db3ac;
+  --cream:#07110f;
+  --cream-2:#081512;
+  --surface:#0c1a17;
+  --sand:#12241f;
+  --field:#0a1714;
+  --line:rgba(255,255,255,.09);
+  --line-strong:rgba(79,209,181,.32);
+  --green-tint:rgba(79,209,181,.1);
+  --header-bg:rgba(7,17,15,.9);
+  --shadow:0 24px 60px -30px rgba(0,0,0,.85);
+  --shadow-sm:0 10px 24px -14px rgba(0,0,0,.7);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:92px;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.7;
+  color:var(--ink);
+  background:var(--cream);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body,header,footer,.stats-card,.feature-card,.files-card,.credit,.site-footer{
+  transition:background-color .3s ease,color .3s ease,border-color .3s ease;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+button,input{color:inherit}
+code,pre{font-family:var(--font-mono)}
+[hidden]{display:none!important}
+::selection{background:rgba(184,134,11,.25)}
+:focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px;border-radius:6px}
+.container{width:min(1160px,calc(100% - 48px));margin-inline:auto}
+.icon{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.icon-xs{width:14px;height:14px}
+.skip-link{
+  position:fixed;top:10px;inset-inline-start:10px;z-index:300;
+  padding:8px 14px;border-radius:8px;background:var(--ink);color:var(--cream);
+  transform:translateY(-160%);transition:transform .2s;
+}
+.skip-link:focus{transform:none}
+.progress-bar{
+  position:fixed;top:0;inset-inline-start:0;z-index:120;
+  width:0;height:3px;border-radius:0 0 3px 0;
+  background:linear-gradient(90deg,#d4a017,#f3d27a);
+  transition:width .1s linear;
+}
+
+/* ===== Header ===== */
+.site-header{
+  position:fixed;inset-inline:0;top:0;z-index:100;
+  height:76px;display:flex;align-items:center;
+  color:#f5f3ec;background:transparent;
+  border-bottom:1px solid rgba(245,243,236,.1);
+  transition:background .3s,box-shadow .3s,border-color .3s,color .3s;
+}
+.site-header.scrolled{
+  color:var(--ink);
+  background:var(--header-bg);
+  border-bottom-color:var(--line);
+  box-shadow:0 10px 30px -22px rgba(6,46,40,.55);
+  -webkit-backdrop-filter:blur(16px) saturate(1.4);
+  backdrop-filter:blur(16px) saturate(1.4);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;height:100%}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.brand-mark{
+  width:38px;height:38px;flex:none;border-radius:11px;display:grid;place-items:center;
+  color:#f5f3ec;background:linear-gradient(145deg,#0f7364,#0b5c4f);
+  box-shadow:inset 0 0 0 1px rgba(245,243,236,.14),0 8px 20px -10px rgba(0,0,0,.5);
+}
+.brand-mark .icon{width:20px;height:20px}
+.site-header:not(.scrolled) .brand-mark{
+  background:rgba(245,243,236,.12);
+  box-shadow:inset 0 0 0 1px rgba(245,243,236,.24);
+}
+.brand-text{display:flex;flex-direction:column;line-height:1.25;min-width:0}
+.brand-text strong{font-family:var(--font-display);font-size:1.22rem;font-weight:700}
+.brand-text small{font-size:.66rem;color:rgba(245,243,236,.62)}
+.site-header.scrolled .brand-text small{color:var(--muted)}
+.nav{display:flex;align-items:center;gap:4px}
+.nav a{
+  position:relative;padding:8px 12px;border-radius:999px;
+  font-size:.92rem;font-weight:500;color:rgba(245,243,236,.78);
+  transition:color .2s,background .2s;
+}
+.nav a:hover{color:#f5f3ec;background:rgba(245,243,236,.08)}
+.nav a.active{color:#f5f3ec}
+.nav a.active::after{
+  content:"";position:absolute;inset-inline:12px;bottom:2px;height:2px;
+  border-radius:2px;background:var(--gold-bright);
+}
+.site-header.scrolled .nav a{color:var(--muted)}
+.site-header.scrolled .nav a:hover{color:var(--ink);background:var(--sand)}
+.site-header.scrolled .nav a.active{color:var(--accent)}
+.nav-blog{display:none!important}
+.header-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{
+  width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid rgba(245,243,236,.18);background:rgba(245,243,236,.06);color:inherit;
+  transition:background .2s,transform .2s,border-color .2s;
+}
+.icon-btn:hover{background:rgba(245,243,236,.14);transform:translateY(-1px)}
+.site-header.scrolled .icon-btn{border-color:var(--line);background:var(--surface);color:var(--ink)}
+.site-header.scrolled .icon-btn:hover{background:var(--sand)}
+.theme-btn .icon-moon{display:none}
+html[data-theme="dark"] .theme-btn .icon-sun{display:none}
+html[data-theme="dark"] .theme-btn .icon-moon{display:block}
+.menu-btn{display:none}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  padding:.86rem 1.45rem;border-radius:999px;border:1px solid transparent;
+  font-family:var(--font-body);font-size:.95rem;font-weight:700;line-height:1.2;
+  transition:transform .2s,box-shadow .2s,background .2s,border-color .2s,filter .2s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-sm{padding:.6rem 1rem;font-size:.86rem}
+.btn-gold{
+  color:#1d1604;background:linear-gradient(135deg,#e0b02a,#b8860b);
+  box-shadow:0 10px 26px -12px rgba(212,160,23,.75);
+}
+.btn-gold:hover{box-shadow:0 16px 32px -14px rgba(212,160,23,.8);filter:brightness(1.05)}
+.btn-ghost{
+  color:#f5f3ec;background:rgba(245,243,236,.06);
+  border-color:rgba(245,243,236,.28);
+}
+.btn-ghost:hover{background:rgba(245,243,236,.13)}
+.btn-green{
+  color:#f5f3ec;background:var(--brand);border-color:var(--brand);
+  box-shadow:0 12px 28px -16px rgba(11,92,79,.7);
+}
+.btn-green:hover{background:var(--brand-2);border-color:var(--brand-2)}
+.btn-line{
+  color:var(--ink);background:transparent;border-color:var(--line-strong);
+}
+.btn-line:hover{background:var(--green-tint);border-color:var(--accent)}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;overflow:hidden;
+  padding:150px 0 112px;color:#f5f3ec;
+  background:
+    radial-gradient(900px 520px at 82% 6%,rgba(18,138,120,.6),transparent 62%),
+    radial-gradient(700px 420px at 6% 96%,rgba(184,134,11,.18),transparent 62%),
+    linear-gradient(155deg,#073f36 0%,#0b5c4f 52%,#06302a 100%);
+}
+.hero-pattern{position:absolute;inset:0;width:100%;height:100%;opacity:.55;pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 14px;border-radius:999px;
+  border:1px solid rgba(245,243,236,.18);background:rgba(245,243,236,.06);
+  color:rgba(245,243,236,.86);font-size:.8rem;font-weight:500;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+}
+.eyebrow .icon{color:var(--gold-bright)}
+.hero h1{
+  margin:22px 0 20px;font-family:var(--font-display);
+  font-size:clamp(2.7rem,5.2vw,4.3rem);font-weight:700;line-height:1.28;letter-spacing:-.01em;
+}
+.hero h1 .gold{color:#e9be4e}
+.lead{max-width:57ch;margin:0 0 30px;color:rgba(245,243,236,.8);font-size:1.05rem;line-height:2}
+.lead strong{color:#f5f3ec;font-weight:700}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+.hero-points{
+  display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;
+  color:rgba(245,243,236,.66);font-size:.8rem;
+}
+.hero-points li{display:flex;align-items:center;gap:6px}
+.hero-points .icon{width:15px;height:15px;color:#7fd6c0}
+.hero-visual{position:relative;isolation:isolate;max-width:520px;width:100%;margin-inline:auto}
+
+/* ===== Stats ===== */
+.stats-outer{position:relative;z-index:2;margin-top:-62px}
+.stats-card{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  padding:26px 12px;border:1px solid var(--line);border-radius:24px;
+  background:var(--surface);box-shadow:var(--shadow);
+}
+.stat{position:relative;padding:4px 18px;text-align:center}
+.stat + .stat::before{
+  content:"";position:absolute;inset-inline-start:0;top:12%;width:1px;height:76%;
+  background:var(--line);
+}
+.stat b{display:block;font-size:1.9rem;font-weight:800;line-height:1.1;color:var(--accent)}
+.stat span{display:block;margin-top:6px;font-size:.8rem;color:var(--muted)}
+
+/* ===== Hero mockup ===== */
+.browser{
+  position:relative;overflow:hidden;border-radius:20px;
+  background:#fffdf8;border:1px solid rgba(6,46,40,.12);
+  box-shadow:0 45px 90px -35px rgba(0,0,0,.65);
+  transform:rotate(-1.2deg);transition:transform .45s ease;
+}
+.browser:hover{transform:rotate(0)}
+.browser-top{
+  display:flex;align-items:center;gap:10px;padding:10px 14px;
+  background:#efeadd;border-bottom:1px solid rgba(6,46,40,.08);
+}
+.browser-dots{display:flex;gap:5px}
+.browser-dots i{display:block;width:8px;height:8px;border-radius:50%;background:#d5cfbf}
+.browser-dots i:nth-child(1){background:#e08a7d}
+.browser-dots i:nth-child(2){background:#e3c06a}
+.browser-dots i:nth-child(3){background:#7fbfa0}
+.browser-url{
+  display:flex;align-items:center;gap:5px;margin-inline:auto;
+  padding:3px 12px;border:1px solid rgba(6,46,40,.08);border-radius:999px;
+  background:#fffdf8;color:#6b7a75;font-family:var(--font-mono);
+  font-size:.6rem;direction:ltr;
+}
+.browser-url .icon{width:10px;height:10px;color:#8a9a94}
+.browser-spacer{width:38px}
+.browser-page{padding:16px 16px 18px}
+.mini-nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-bottom:12px;margin-bottom:14px;border-bottom:1px solid #ece7da;
+}
+.mini-logo{font-family:var(--font-display);font-size:.9rem;font-weight:700;color:#0b5c4f}
+.mini-links{display:flex;gap:6px}
+.mini-links i{display:block;width:22px;height:5px;border-radius:3px;background:#e6e0d2}
+.mini-chip{
+  display:inline-block;padding:3px 8px;border-radius:999px;
+  background:#f3ead2;color:#8a6508;font-size:.55rem;font-weight:700;
+}
+.mini-post h3{margin:8px 0 6px;font-size:1rem;line-height:1.5;color:#14201d}
+.mini-meta{display:flex;gap:8px;margin-bottom:10px}
+.mini-meta i{display:block;width:38px;height:5px;border-radius:3px;background:#ece7da}
+.mini-paragraph{display:grid;gap:5px;margin-bottom:12px}
+.mini-paragraph i{display:block;height:5px;border-radius:3px;background:#efebdf}
+.mini-paragraph i.w60{width:60%}
+.mini-toc{
+  max-width:82%;margin-bottom:12px;padding:9px 11px;border:1px solid #ece6d6;border-radius:10px;
+  background:#f8f5ec;
+}
+.mini-toc-title{display:block;margin-bottom:5px;color:#0b5c4f;font-size:.6rem;font-weight:800}
+.mini-toc-row{display:flex;align-items:center;gap:6px;padding:2px 0;color:#5b6b66;font-size:.58rem}
+.mini-toc-row b{
+  display:grid;place-items:center;width:13px;height:13px;border-radius:50%;
+  background:#e7f1ec;color:#0b5c4f;font-size:.5rem;
+}
+.mini-related-title{display:block;margin-bottom:6px;color:#0b5c4f;font-size:.58rem;font-weight:800}
+.mini-related-cards{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.mini-related-cards span{display:block;padding:4px;border:1px solid #ece6d6;border-radius:7px;background:#fff}
+.mini-related-cards i{
+  display:block;height:26px;margin-bottom:4px;border-radius:4px;
+  background:linear-gradient(135deg,#0f7364,#0b5c4f);
+}
+.mini-related-cards b{display:block;width:70%;height:4px;border-radius:2px;background:#e8e3d6}
+.float-card{
+  position:absolute;z-index:2;display:flex;align-items:center;gap:8px;
+  padding:9px 12px;border:1px solid rgba(6,46,40,.1);border-radius:12px;
+  background:#fffdf8;box-shadow:0 16px 35px -18px rgba(0,0,0,.5);
+}
+.float-card b{display:block;color:#14201d;font-size:.66rem;line-height:1.4}
+.float-card small{display:block;color:#7a8a84;font-size:.55rem}
+.float-icon{
+  display:grid;place-items:center;flex:none;width:30px;height:30px;border-radius:9px;
+  background:#e7f1ec;color:#0b5c4f;
+}
+.float-icon .icon{width:15px;height:15px}
+.float-a{top:14%;inset-inline-end:-36px;animation:floaty 6s ease-in-out infinite}
+.float-b{bottom:-16px;inset-inline-start:-28px;animation:floaty 7s ease-in-out infinite;animation-delay:-3s}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* ===== Sections ===== */
+.section{padding:92px 0}
+.section-alt{background:linear-gradient(180deg,var(--cream-2),var(--cream))}
+.section-head{max-width:740px;margin:0 auto 46px;text-align:center}
+.kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  color:var(--gold-text);font-size:.8rem;font-weight:700;letter-spacing:.02em;
+}
+.kicker::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold-bright)}
+.section-head h2{
+  margin:12px 0 14px;font-family:var(--font-display);
+  font-size:clamp(1.9rem,3.6vw,2.8rem);font-weight:700;line-height:1.4;color:var(--ink);
+}
+.section-head p{margin:0;color:var(--muted);font-size:1rem;line-height:1.95}
+.hl{
+  white-space:nowrap;
+  text-decoration:underline;
+  text-decoration-color:rgba(212,160,23,.55);
+  text-decoration-thickness:.1em;
+  text-underline-offset:.16em;
+  text-decoration-skip-ink:none;
+}
+
+/* ===== Features ===== */
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feature-card{
+  position:relative;overflow:hidden;padding:26px 24px 22px;
+  border:1px solid var(--line);border-radius:20px;background:var(--surface);
+  transition:transform .3s,border-color .3s,box-shadow .3s;
+}
+.feature-card::before{
+  content:"";position:absolute;inset-inline:0;top:0;height:3px;
+  background:linear-gradient(90deg,var(--gold-bright),#0f7364);
+  transform:scaleX(0);transform-origin:right;transition:transform .35s;
+}
+.feature-card:hover{transform:translateY(-5px);border-color:var(--line-strong);box-shadow:var(--shadow)}
+.feature-card:hover::before{transform:scaleX(1)}
+.feature-icon{
+  display:grid;place-items:center;width:48px;height:48px;margin-bottom:18px;
+  border-radius:14px;background:var(--green-tint);color:var(--accent);
+}
+.feature-icon .icon{width:23px;height:23px}
+.feature-card h3{margin:0 0 8px;font-size:1.08rem;font-weight:700}
+.feature-card p{margin:0 0 16px;color:var(--muted);font-size:.9rem;line-height:1.9}
+.feature-tag{
+  display:inline-block;padding:4px 8px;border:1px solid var(--line);border-radius:6px;
+  background:var(--green-tint);color:var(--accent);font-size:.72rem;direction:ltr;
+}
+.also{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;margin-top:28px}
+.also-label{margin-inline-end:4px;color:var(--muted);font-size:.82rem;font-weight:700}
+.chip{
+  display:inline-flex;align-items:center;gap:6px;padding:7px 12px;
+  border:1px solid var(--line);border-radius:999px;background:var(--surface);
+  color:var(--muted);font-size:.8rem;transition:color .2s,border-color .2s,transform .2s;
+}
+.chip:hover{color:var(--accent);border-color:var(--line-strong);transform:translateY(-2px)}
+.chip .icon{width:13px;height:13px;color:var(--accent)}
+
+/* ===== Files ===== */
+.files-card{
+  padding:26px 26px 20px;border:1px solid var(--line);border-radius:26px;
+  background:var(--surface);box-shadow:var(--shadow);
+}
+.files-toolbar{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  gap:16px;margin-bottom:8px;
+}
+.files-title{display:flex;align-items:center;gap:10px}
+.files-title h3{margin:0;font-size:1.05rem}
+.badge{
+  display:inline-flex;align-items:center;justify-content:center;min-width:26px;
+  padding:3px 8px;border-radius:999px;background:var(--green-tint);
+  color:var(--accent);font-size:.72rem;font-weight:700;
+}
+.search{position:relative;display:block}
+.search .icon{
+  position:absolute;inset-inline-start:12px;top:50%;transform:translateY(-50%);
+  width:16px;height:16px;color:var(--muted);pointer-events:none;
+}
+.search input{
+  width:280px;max-width:100%;padding-block:10px;padding-inline:38px 14px;
+  border:1px solid var(--line);border-radius:999px;background:var(--field);
+  font-size:.85rem;transition:border-color .2s,box-shadow .2s;
+}
+.search input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--green-tint)}
+.file-group + .file-group{margin-top:26px;padding-top:22px;border-top:1px dashed var(--line)}
+.file-group h4{display:flex;align-items:center;gap:8px;margin:0 0 12px;font-size:.95rem;font-weight:700}
+.file-dot{width:8px;height:8px;flex:none;border-radius:50%;background:var(--accent)}
+.file-dot.js{background:var(--gold)}
+.file-dot.lib{background:#2f8f9d}
+.file-group h4 small{margin-inline-start:auto;color:var(--muted);font-size:.72rem;font-weight:500}
+.file-list{position:relative;display:grid;grid-template-columns:repeat(2,1fr);gap:4px 18px;margin:0;padding:0;list-style:none}
+.file-list::before{
+  content:"";position:absolute;top:6px;bottom:6px;inset-inline-start:50%;width:1px;
+  background:var(--line);pointer-events:none;
+}
+.file-row{
+  display:flex;align-items:center;gap:12px;padding:10px 12px;
+  border:1px solid transparent;border-radius:12px;
+  transition:background .2s,border-color .2s;
+}
+.file-row:hover{background:var(--field);border-color:var(--line)}
+.file-info{flex:1;min-width:0}
+.file-info code{
+  display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  color:var(--accent);font-size:.82rem;direction:ltr;unicode-bidi:isolate;
+}
+.file-info p{margin:2px 0 0;color:var(--muted);font-size:.76rem;line-height:1.65}
+.copy-btn{
+  display:inline-flex;align-items:center;gap:4px;flex:none;
+  padding:5px 8px;border:1px solid var(--line);border-radius:7px;
+  background:transparent;color:var(--muted);font-size:.68rem;opacity:.6;
+  transition:opacity .2s,color .2s,border-color .2s,background .2s;
+}
+.file-row:hover .copy-btn,.copy-btn:focus-visible,.copy-btn.copied{opacity:1}
+.copy-btn:hover{color:var(--accent);border-color:var(--line-strong);background:var(--surface)}
+.copy-btn.copied{color:var(--accent);border-color:var(--accent);opacity:1}
+.files-empty{padding:32px 12px;text-align:center;color:var(--muted);font-size:.9rem}
+.files-note{
+  display:flex;align-items:flex-start;gap:8px;margin-top:20px;padding-top:16px;
+  border-top:1px dashed var(--line);color:var(--muted);font-size:.8rem;line-height:1.8;
+}
+.files-note .icon{width:15px;height:15px;margin-top:4px;color:var(--accent)}
+
+/* ===== Install ===== */
+.install-grid{display:grid;gap:30px}
+.install-grid > *{min-width:0}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:0;padding:0;list-style:none}
+.steps li{
+  position:relative;overflow:hidden;padding:22px 20px 20px;
+  border:1px solid var(--line);border-radius:18px;background:var(--surface);
+  box-shadow:var(--shadow-sm);
+  transition:transform .25s,border-color .25s,box-shadow .25s;
+}
+.steps li:hover{transform:translateY(-3px);border-color:var(--line-strong);box-shadow:var(--shadow)}
+.steps li::after{
+  content:"";position:absolute;inset-inline-end:-16px;top:-16px;
+  width:64px;height:64px;border-radius:50%;background:var(--green-tint);opacity:.5;
+}
+.step-num{
+  position:relative;display:inline-grid;place-items:center;margin-bottom:14px;
+  width:38px;height:38px;border-radius:12px;
+  background:var(--green-tint);color:var(--accent);font-size:.82rem;font-weight:800;
+}
+.steps h3{position:relative;margin:0 0 6px;font-size:.98rem}
+.steps p{position:relative;margin:0;color:var(--muted);font-size:.85rem;line-height:1.85}
+.steps code{
+  padding:1px 5px;border:1px solid var(--line);border-radius:5px;
+  background:var(--field);color:var(--accent);font-size:.8rem;
+  direction:ltr;unicode-bidi:isolate;
+}
+.code-card{
+  overflow:hidden;border:1px solid rgba(245,243,236,.08);border-radius:20px;
+  background:#081713;color:#e8f1ec;box-shadow:0 30px 60px -30px rgba(6,46,40,.65);
+}
+.code-head{
+  display:flex;align-items:center;gap:10px;padding:12px 16px;
+  border-bottom:1px solid rgba(245,243,236,.08);background:rgba(255,255,255,.02);
+}
+.code-dots{display:flex;gap:5px}
+.code-dots i{display:block;width:9px;height:9px;border-radius:50%;background:rgba(245,243,236,.18)}
+.code-dots i:first-child{background:#e26d5c}
+.code-dots i:nth-child(2){background:#e3b341}
+.code-dots i:nth-child(3){background:#4fb286}
+.code-name{margin-inline-start:4px;color:rgba(232,241,236,.55);font-family:var(--font-mono);font-size:.7rem;direction:ltr}
+.copy-code{
+  display:inline-flex;align-items:center;gap:6px;margin-inline-start:auto;
+  padding:5px 9px;border:1px solid rgba(245,243,236,.14);border-radius:7px;
+  background:rgba(245,243,236,.04);color:rgba(232,241,236,.75);font-size:.7rem;
+  transition:background .2s,color .2s,border-color .2s;
+}
+.copy-code:hover{background:rgba(245,243,236,.1);color:#fff;border-color:rgba(245,243,236,.28)}
+.copy-code.copied{color:#7dd3b8;border-color:rgba(125,211,184,.5)}
+.code-card pre{
+  margin:0;padding:20px 18px 22px;overflow-x:auto;
+  font-size:.78rem;line-height:1.9;direction:ltr;text-align:left;tab-size:2;
+}
+.code-card code{font-family:var(--font-mono);white-space:pre}
+.c-comment{color:#7fa99b}
+.c-tag{color:#7dd3b8}
+.c-attr{color:#e3b341}
+.c-str{color:#f0d48a}
+.code-note{display:flex;gap:8px;margin:14px 2px 0;color:var(--muted);font-size:.78rem;line-height:1.8}
+.code-note .icon{flex:none;width:15px;height:15px;margin-top:4px;color:var(--accent)}
+
+/* ===== Credits ===== */
+.credits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.credit{
+  display:flex;align-items:flex-start;gap:14px;padding:20px;
+  border:1px solid var(--line);border-radius:16px;background:var(--surface);
+  transition:transform .25s,border-color .25s,box-shadow .25s;
+}
+.credit:hover{transform:translateY(-3px);border-color:var(--line-strong);box-shadow:var(--shadow-sm)}
+.credit-mark{
+  display:grid;place-items:center;flex:none;width:42px;height:42px;border-radius:12px;
+  background:var(--green-tint);color:var(--accent);
+  font-family:var(--font-display);font-size:1.25rem;font-weight:700;
+}
+.credit h3{margin:0 0 2px;font-size:.92rem}
+.credit p{margin:0;color:var(--muted);font-size:.78rem;line-height:1.7}
+.credit a{color:inherit;text-decoration:underline;text-decoration-color:var(--line-strong);text-underline-offset:3px}
+.credit a:hover{color:var(--accent)}
+.credits-note{margin:22px 0 0;text-align:center;color:var(--muted);font-size:.8rem}
+
+/* ===== CTA ===== */
+.cta-section{padding:0 0 96px}
+.cta{
+  position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;
+  gap:32px;padding:44px 48px;border-radius:28px;color:#f5f3ec;
+  background:
+    radial-gradient(700px 300px at 10% 10%,rgba(212,160,23,.22),transparent 60%),
+    linear-gradient(140deg,#0b5c4f,#073f36 70%);
+  box-shadow:0 30px 70px -35px rgba(6,46,40,.7);
+}
+.cta::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.14;
+  background-image:radial-gradient(circle at 1px 1px,rgba(245,243,236,.5) 1px,transparent 0);
+  background-size:26px 26px;
+}
+.cta-copy{position:relative;z-index:1;max-width:560px}
+.kicker-light{color:#e9be4e}
+.cta h2{margin:8px 0 10px;font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.4rem);line-height:1.4}
+.cta p{margin:0;color:rgba(245,243,236,.72);font-size:.95rem;line-height:1.9}
+.cta-actions{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:10px;flex:none}
+
+/* ===== Footer ===== */
+.site-footer{padding:56px 0 24px;border-top:1px solid var(--line);background:var(--surface)}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px}
+.footer-brand .brand{margin-bottom:14px}
+.footer-brand .brand-text strong{color:var(--ink)}
+.footer-brand .brand-text small{color:var(--muted)}
+.footer-brand p{max-width:38ch;margin:0;color:var(--muted);font-size:.86rem;line-height:1.9}
+.footer-col{display:flex;flex-direction:column;gap:8px}
+.footer-col h4{margin:0 0 6px;font-size:.85rem;color:var(--ink)}
+.footer-col a{width:fit-content;color:var(--muted);font-size:.84rem;transition:color .2s}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;
+  margin-top:40px;padding-top:20px;border-top:1px solid var(--line);
+}
+.footer-bottom p{margin:0;color:var(--muted);font-size:.76rem}
+
+/* ===== Floating UI ===== */
+.to-top{
+  position:fixed;inset-inline-end:22px;bottom:22px;z-index:90;
+  display:grid;place-items:center;width:44px;height:44px;border:0;border-radius:50%;
+  background:var(--brand);color:#f5f3ec;
+  box-shadow:0 12px 30px -10px rgba(6,46,40,.5);
+  opacity:0;visibility:hidden;transform:translateY(10px);
+  transition:opacity .25s,visibility .25s,transform .25s,background .2s;
+}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.to-top:hover{background:var(--brand-2);transform:translateY(-2px)}
+.toast{
+  position:fixed;inset-inline:0;bottom:24px;z-index:200;width:max-content;max-width:calc(100% - 32px);
+  margin-inline:auto;padding:9px 18px;border-radius:999px;
+  background:var(--ink);color:var(--cream);font-size:.82rem;box-shadow:var(--shadow);
+  opacity:0;transform:translateY(12px);pointer-events:none;
+  transition:opacity .25s,transform .25s;
+}
+.toast.show{opacity:1;transform:none}
+
+/* ===== Motion ===== */
+.js .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+.features-grid .reveal:nth-child(2){transition-delay:.05s}
+.features-grid .reveal:nth-child(3){transition-delay:.1s}
+.features-grid .reveal:nth-child(4){transition-delay:.15s}
+.features-grid .reveal:nth-child(5){transition-delay:.2s}
+.features-grid .reveal:nth-child(6){transition-delay:.25s}
+.credits-grid .reveal:nth-child(2){transition-delay:.05s}
+.credits-grid .reveal:nth-child(3){transition-delay:.1s}
+.credits-grid .reveal:nth-child(4){transition-delay:.15s}
+.credits-grid .reveal:nth-child(5){transition-delay:.2s}
+.credits-grid .reveal:nth-child(6){transition-delay:.25s}
+
+/* ===== Responsive ===== */
+@media (max-width:1024px){
+  .hero-grid{gap:36px}
+  .features-grid{grid-template-columns:repeat(2,1fr)}
+  .credits-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:960px){
+  .menu-btn{display:inline-flex}
+  .header-blog{display:none}
+  .nav{
+    position:fixed;top:86px;inset-inline:16px;z-index:110;
+    flex-direction:column;align-items:stretch;gap:4px;padding:12px;
+    border:1px solid var(--line);border-radius:18px;background:var(--surface);
+    box-shadow:var(--shadow);
+    opacity:0;visibility:hidden;transform:translateY(-8px);
+    transition:opacity .25s,transform .25s,visibility .25s;
+  }
+  body.nav-open .nav{opacity:1;visibility:visible;transform:none}
+  .nav a{color:var(--ink);padding:12px 14px;border-radius:10px}
+  .nav a:hover{background:var(--sand)}
+  .nav a.active{color:var(--accent)}
+  .nav a.active::after{display:none}
+  .site-header.scrolled .nav a{color:var(--ink)}
+  .nav-blog{
+    display:flex!important;margin-top:6px;padding-top:14px!important;
+    border-top:1px solid var(--line);color:var(--accent)!important;
+  }
+  .hero{padding-top:132px}
+  .hero-grid{grid-template-columns:1fr;text-align:center}
+  .hero-copy{display:flex;flex-direction:column;align-items:center}
+  .lead{margin-inline:auto}
+  .hero-actions,.hero-points{justify-content:center}
+  .hero-visual{max-width:520px;margin:12px auto 0}
+  .stats-card{grid-template-columns:repeat(2,1fr);padding:18px}
+  .stat{padding:14px 12px}
+  .stat:nth-child(odd)::before{display:none}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/-1}
+  .cta{flex-direction:column;align-items:flex-start;padding:36px 32px}
+}
+@media (max-width:640px){
+  .container{width:calc(100% - 32px)}
+  .hero{padding:124px 0 96px}
+  .hero h1{font-size:clamp(2.2rem,10vw,2.9rem)}
+  .lead{font-size:.96rem}
+  .eyebrow{font-size:.72rem}
+  .btn{padding:.8rem 1.2rem;font-size:.9rem}
+  .float-card{display:none}
+  .browser{transform:none}
+  .features-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .file-list{grid-template-columns:1fr}
+  .file-list::before{display:none}
+  .files-card{padding:18px 14px}
+  .files-toolbar{align-items:stretch}
+  .search,.search input{width:100%}
+  .credits-grid{grid-template-columns:1fr}
+  .cta-actions{width:100%;flex-direction:column}
+  .cta-actions .btn{flex:none;width:100%}
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+  .footer-brand{grid-column:auto}
+  .footer-bottom{justify-content:center;text-align:center}
+  .stats-outer{margin-top:-46px}
+  .stat b{font-size:1.6rem}
+  .section{padding:68px 0}
+  .section-head{margin-bottom:34px}
+  .code-card pre{font-size:.7rem;white-space:pre-wrap;overflow-wrap:anywhere;padding:16px 14px 18px}
+  .code-card code{white-space:inherit}
+  .toast{bottom:80px}
+}
+@media (max-width:420px){
+  .brand-text small{display:none}
+  .brand-text strong{font-size:1.1rem}
+  .header-inner{gap:12px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .js .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body id="top">
+<a class="skip-link" href="#main">تجاوز إلى المحتوى</a>
+<div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
+  <symbol id="i-book" viewBox="0 0 24 24">
+    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+  </symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24">
+    <rect x="3" y="3" width="7" height="9" rx="1.5"></rect>
+    <rect x="14" y="3" width="7" height="5" rx="1.5"></rect>
+    <rect x="14" y="12" width="7" height="9" rx="1.5"></rect>
+    <rect x="3" y="16" width="7" height="5" rx="1.5"></rect>
+  </symbol>
+  <symbol id="i-list" viewBox="0 0 24 24">
+    <path d="M9 6h12M9 12h12M9 18h12"></path>
+    <path d="M4 6h.01M4 12h.01M4 18h.01"></path>
+  </symbol>
+  <symbol id="i-link" viewBox="0 0 24 24">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </symbol>
+  <symbol id="i-music" viewBox="0 0 24 24">
+    <path d="M9 18V5l12-2v13"></path>
+    <circle cx="6" cy="18" r="3"></circle>
+    <circle cx="18" cy="16" r="3"></circle>
+  </symbol>
+  <symbol id="i-timer" viewBox="0 0 24 24">
+    <circle cx="12" cy="13" r="8"></circle>
+    <path d="M12 9v4l2 2M9 2h6"></path>
+  </symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+    <path d="m9 12 2 2 4-4"></path>
+  </symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24">
+    <rect x="4" y="10" width="16" height="11" rx="2"></rect>
+    <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+  </symbol>
+  <symbol id="i-search" viewBox="0 0 24 24">
+    <circle cx="11" cy="11" r="7"></circle>
+    <path d="m21 21-4.3-4.3"></path>
+  </symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24">
+    <rect x="9" y="9" width="12" height="12" rx="2"></rect>
+    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+  </symbol>
+  <symbol id="i-check" viewBox="0 0 24 24">
+    <path d="m20 6-11 11-5-5"></path>
+  </symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24">
+    <path d="M12 19V5M5 12l7-7 7 7"></path>
+  </symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24">
+    <path d="M12 5v14M5 12l7 7 7-7"></path>
+  </symbol>
+  <symbol id="i-external" viewBox="0 0 24 24">
+    <path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+  </symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="4"></circle>
+    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+  </symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+  </symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24">
+    <path d="M4 7h16M4 12h16M4 17h16"></path>
+  </symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24">
+    <path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"></path>
+  </symbol>
+  <symbol id="i-info" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10"></circle>
+    <path d="M12 16v-4M12 8h.01"></path>
+  </symbol>
+  <symbol id="i-code" viewBox="0 0 24 24">
+    <path d="m16 18 6-6-6-6M8 6l-6 6 6 6"></path>
+  </symbol>
+</svg>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="الحقيبة — أعلى الصفحة">
+      <span class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#i-book"></use></svg></span>
+      <span class="brand-text"><strong>الحقيبة</strong><small>أدوات Blogger العربية</small></span>
+    </a>
+    <nav class="nav" id="primaryNav" aria-label="التنقل الرئيسي">
+      <a href="#features">المميزات</a>
+      <a href="#files">الملفات</a>
+      <a href="#install">التركيب</a>
+      <a href="#credits">المصادر</a>
+      <a class="nav-blog" href="https://elkandoussi.blogspot.com/" target="_blank" rel="noopener">المدونة <svg class="icon icon-xs" aria-hidden="true"><use href="#i-external"></use></svg></a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-btn" id="themeToggle" type="button" aria-label="تفعيل الوضع الليلي" title="تبديل المظهر">
+        <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"></use></svg>
+        <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"></use></svg>
+      </button>
+      <a class="btn btn-gold btn-sm header-blog" href="https://elkandoussi.blogspot.com/" target="_blank" rel="noopener">المدونة <svg class="icon icon-xs" aria-hidden="true"><use href="#i-external"></use></svg></a>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="primaryNav">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <svg class="hero-pattern" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="hp-stars" width="72" height="72" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <path d="M36 6 44 28 66 36 44 44 36 66 28 44 6 36 28 28Z" fill="none" stroke="#f5f3ec" stroke-width=".8"></path>
+        <circle cx="36" cy="36" r="2" fill="#d4a017"></circle>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#hp-stars)" opacity=".12"></rect>
+  </svg>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-sparkle"></use></svg> قوالب وأدوات معربة لمدونات Blogger</span>
+      <h1>حقيبة واحدة،<br><span class="gold">لكل أدوات مدونتك.</span></h1>
+      <p class="lead">ملفات <strong>CSS</strong> و<strong>JavaScript</strong> جاهزة لتخصيص قالب <strong>Bookmark</strong> وتعريبه: بطاقات المقالات، الفهرس، المقالات ذات الصلة، مشغل الموسيقى، وحماية الروابط — تثبت بنقرة عبر jsDelivr.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#files">تصفح الملفات <svg class="icon icon-xs" aria-hidden="true"><use href="#i-arrow-down"></use></svg></a>
+        <a class="btn btn-ghost" href="#install">طريقة التركيب</a>
+      </div>
+      <ul class="hero-points">
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> بدون بناء أو تثبيت</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> متوافق مع الهاتف</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> رخصة GPL-3.0</li>
+      </ul>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="browser">
+        <div class="browser-top">
+          <span class="browser-dots"><i></i><i></i><i></i></span>
+          <span class="browser-url"><svg class="icon"><use href="#i-lock"></use></svg> elkandoussi.blogspot.com</span>
+          <span class="browser-spacer"></span>
+        </div>
+        <div class="browser-page">
+          <div class="mini-nav">
+            <span class="mini-logo">الحقيبة</span>
+            <span class="mini-links"><i></i><i></i><i></i></span>
+          </div>
+          <div class="mini-post">
+            <span class="mini-chip">التربية الإسلامية</span>
+            <h3>فضل طلب العلم في الإسلام</h3>
+            <div class="mini-meta"><i></i><i></i></div>
+            <div class="mini-paragraph"><i></i><i></i><i></i><i class="w60"></i></div>
+            <div class="mini-toc">
+              <span class="mini-toc-title">فهرس المحتويات</span>
+              <span class="mini-toc-row"><b>1</b> مقدمة</span>
+              <span class="mini-toc-row"><b>2</b> فضل العلم</span>
+              <span class="mini-toc-row"><b>3</b> آداب الطالب</span>
+            </div>
+            <div class="mini-related">
+              <span class="mini-related-title">مقالات ذات صلة</span>
+              <div class="mini-related-cards"><span><i></i><b></b></span><span><i></i><b></b></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="float-card float-a">
+        <span class="float-icon"><svg class="icon"><use href="#i-music"></use></svg></span>
+        <span><b>مشغل الموسيقى</b><small>هادئ وخفيف</small></span>
+      </div>
+      <div class="float-card float-b">
+        <span class="float-icon"><svg class="icon"><use href="#i-shield"></use></svg></span>
+        <span><b>روابط آمنة</b><small>حماية تلقائية</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-outer">
+  <div class="container">
+    <div class="stats-card reveal">
+      <div class="stat"><b>27</b><span>ملفا جاهزا</span></div>
+      <div class="stat"><b>15</b><span>أداة JavaScript</span></div>
+      <div class="stat"><b>8</b><span>أنماط CSS</span></div>
+      <div class="stat"><b>4</b><span>مكتبات مساعدة</span></div>
+    </div>
+  </div>
+</div>
+
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">لماذا الحقيبة؟</span>
+      <h2>كل ما تحتاجه مدونتك… <span class="hl">في حقيبة واحدة</span></h2>
+      <p>أدوات مختارة تعمل معا بسلاسة، وضعت لتنظيم المحتوى وتجميله دون إبطاء المدونة أو تعقيد القالب.</p>
+    </div>
+    <div class="features-grid">
+      <article class="feature-card reveal">
+        <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-grid"></use></svg></span>
+        <h3>بطاقات مقالات أنيقة</h3>
+        <p>اعرض مقالاتك في بطاقات مرتبة تبرز الصورة والتصنيف والتاريخ، وتعمل بسلاسة على الهاتف.</p>
+        <code class="feature-tag">BookmarkPosts</code>
+      </article>
+      <article class="feature-card reveal">
+        <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-list"></use></svg></span>
+        <h3>فهرس محتويات تلقائي</h3>
+        <p>فهرس يبنى من عناوين المقال تلقائيا، يسهل التنقل في الدروس الطويلة ويختصر وقت القارئ.</p>
+        <code class="feature-tag">TableOfContents</code>
+      </article>
+      <article class="feature-card reveal">
+        <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-link"></use></svg></span>
+        <h3>مقالات ذات صلة</h3>
+        <p>اقترح قراءات أخرى أسفل كل مقال، وزد الوقت الذي يقضيه الزائر داخل مدونتك.</p>
+        <code class="feature-tag">RelatedPosts</code>
+      </article>
+      <article class="feature-card reveal">
+        <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-music"></use></svg></span>
+        <h3>مشغل موسيقى خفيف</h3>
+        <p>شغل تلاوات أو مقاطع هادئة داخل المدونة دون إبطاء الصفحة أو إزعاج الزائر.</p>
+        <code class="feature-tag">MusicPlayer</code>
+      </article>
+      <article class="feature-card reveal">
+        <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-timer"></use></svg></span>
+        <h3>عداد تنزيل ذكي</h3>
+        <p>جهز روابط ملفاتك بعداد زمني وزر واضح، مع تجربة أنيقة وسهلة للطالب.</p>
+        <code class="feature-tag">CountdownDownloadBox</code>
+      </article>
+      <article class="feature-card reveal">
+        <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg></span>
+        <h3>حماية الروابط</h3>
+        <p>أضف طبقة حماية لروابط التحميل، ووجه الزائر عبر صفحة وسيطة آمنة وواضحة.</p>
+        <code class="feature-tag">idbprosafelink</code>
+      </article>
+    </div>
+    <div class="also reveal">
+      <span class="also-label">وأيضا:</span>
+      <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> موافقة الكوكيز</span>
+      <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> شريط تقدم القراءة</span>
+      <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> ترجمة Google</span>
+      <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> فصول تلقائية</span>
+      <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> تنبيه انقطاع الإنترنت</span>
+      <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> نسخ الشيفرة</span>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="files">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">المكتبة</span>
+      <h2>27 ملفا… <span class="hl">جاهزا للاستعمال</span></h2>
+      <p>كل أداة في مكانها، مع وصف مختصر وزر نسخ مباشر. ابحث عما تحتاجه، وانقر «نسخ» لتحصل على وسم الاستدعاء جاهزا.</p>
+    </div>
+    <div class="files-card reveal">
+      <div class="files-toolbar">
+        <div class="files-title"><h3>مكتبة الملفات</h3><span class="badge">27</span></div>
+        <label class="search">
+          <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+          <input type="search" id="fileFilter" placeholder="ابحث بالاسم أو الوظيفة…" aria-label="ابحث في الملفات" autocomplete="off">
+        </label>
+      </div>
+
+      <div class="file-group">
+        <h4><span class="file-dot"></span> أنماط CSS <small>8 ملفات</small></h4>
+        <ul class="file-list">
+          <li class="file-row">
+            <div class="file-info"><code>bookMark.min.css</code><p>الأنماط العامة والنوافذ المنبثقة.</p></div>
+            <button class="copy-btn" type="button" data-kind="css" data-copy="bookMark.min.css" aria-label="نسخ وسم bookMark.min.css" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>BookmarkPosts.min.css</code><p>بطاقات المقالات (Bookmark Posts v2.6).</p></div>
+            <button class="copy-btn" type="button" data-kind="css" data-copy="css/BookmarkPosts.min.css" aria-label="نسخ وسم BookmarkPosts.min.css" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>CookieConsent.min.css</code><p>شريط موافقة ملفات تعريف الارتباط.</p></div>
+            <button class="copy-btn" type="button" data-kind="css" data-copy="css/CookieConsent.min.css" aria-label="نسخ وسم CookieConsent.min.css" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>CountdownDownloadBox.min.css</code><p>صندوق تنزيل مع عداد زمني.</p></div>
+            <button class="copy-btn" type="button" data-kind="css" data-copy="css/CountdownDownloadBox.min.css" aria-label="نسخ وسم CountdownDownloadBox.min.css" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>MusicPlayer.min.css</code><p>مشغل موسيقى خفيف.</p></div>
+            <button class="copy-btn" type="button" data-kind="css" data-copy="css/MusicPlayer.min.css" aria-label="نسخ وسم MusicPlayer.min.css" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>RelatedPosts.min.css</code><p>بطاقات المقالات ذات الصلة.</p></div>
+            <button class="copy-btn" type="button" data-kind="css" data-copy="css/RelatedPosts.min.css" aria-label="نسخ وسم RelatedPosts.min.css" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>TableOfContents.min.css</code><p>فهرس محتويات المقال.</p></div>
+            <button class="copy-btn" type="button" data-kind="css" data-copy="css/TableOfContents.min.css" aria-label="نسخ وسم TableOfContents.min.css" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>ThemeColor.min.css</code><p>ألوان القالب والوضع الليلي.</p></div>
+            <button class="copy-btn" type="button" data-kind="css" data-copy="css/ThemeColor.min.css" aria-label="نسخ وسم ThemeColor.min.css" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="file-group">
+        <h4><span class="file-dot js"></span> أدوات JavaScript <small>15 ملفا</small></h4>
+        <ul class="file-list">
+          <li class="file-row">
+            <div class="file-info"><code>AdditionalJavascript.min.js</code><p>إضافات عامة للقالب.</p></div>
+            <button class="copy-btn" type="button" data-kind="js" data-copy="js/AdditionalJavascript.min.js" aria-label="نسخ وسم AdditionalJavascript.min.js" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>AdsenseAds.min.js</code><p>إدارة إعلانات AdSense وأماكنها.</p></div>
+            <button class="copy-btn" type="button" data-kind="js" data-copy="js/AdsenseAds.min.js" aria-label="نسخ وسم AdsenseAds.min.js" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>AutoChapters.min.js</code><p>فصول تلقائية للمقالات والفيديوهات.</p></div>
+            <button class="copy-btn" type="button" data-kind="js" data-copy="js/AutoChapters.min.js" aria-label="نسخ وسم AutoChapters.min.js" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>AutoRelated.min.js</code><p>مقالات ذات صلة تولد تلقائيا.</p></div>
+            <button class="copy-btn" type="button" data-kind="js" data-copy="js/AutoRelated.min.js" aria-label="نسخ وسم AutoRelated.min.js" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>BookmarkPosts.min.js</code><p>وظائف بطاقات المقالات.</p></div>
+            <button class="copy-btn" type="button" data-kind="js" data-copy="js/BookmarkPosts.min.js" aria-label="نسخ وسم BookmarkPosts.min.js" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>CookieConsent.min.js</code><p>منطق موافقة ملفات تعريف الارتباط.</p></div>
+            <button class="copy-btn" type="button" data-kind="js" data-copy="js/CookieConsent.min.js" aria-label="نسخ وسم CookieConsent.min.js" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>CopyPreContent.min.js</code><p>نسخ الشيفرة بالنقر المزدوج.</p></div>
+            <button class="copy-btn" type="button" data-kind="js" data-copy="js/CopyPreContent.min.js" aria-label="نسخ وسم CopyPreContent.min.js" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>CountdownDownloadBox.min.js</code><p>عداد التنزيل وزر التحميل.</p></div>
+            <button class="copy-btn" type="button" data-kind="js" data-copy="js/CountdownDownloadBox.min.js" aria-label="نسخ وسم CountdownDownloadBox.min.js" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>MusicPlayer.min.js</code><p>مشغل الموسيقى.</p></div>
+            <button class="copy-btn" type="button" data-kind="js" data-copy="js/MusicPlayer.min.js" aria-label="نسخ وسم MusicPlayer.min.js" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>NoInternetWidget.min.js</code><p>تنبيه عند انقطاع الإنترنت.</p></div>
+            <button class="copy-btn" type="button" data-kind="js" data-copy="js/NoInternetWidget.min.js" aria-label="نسخ وسم NoInternetWidget.min.js" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>RelatedPosts.min.js</code><p>المقالات ذات الصلة.</p></div>
+            <button class="copy-btn" type="button" data-kind="js" data-copy="js/RelatedPosts.min.js" aria-label="نسخ وسم RelatedPosts.min.js" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>TableOfContents.min.js</code><p>بناء فهرس المحتويات.</p></div>
+            <button class="copy-btn" type="button" data-kind="js" data-copy="js/TableOfContents.min.js" aria-label="نسخ وسم TableOfContents.min.js" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>categoryPost.js</code><p>ودجة «مقالات التصنيف» مع تعريب التاريخ والوسوم.</p></div>
+            <button class="copy-btn" type="button" data-kind="js" data-copy="js/categoryPost.js" aria-label="نسخ وسم categoryPost.js" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>idbprosafelink.js</code><p>توليد روابط آمنة وحمايتها.</p></div>
+            <button class="copy-btn" type="button" data-kind="js" data-copy="js/idbprosafelink.js" aria-label="نسخ وسم idbprosafelink.js" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>progress.js</code><p>شريط تقدم القراءة.</p></div>
+            <button class="copy-btn" type="button" data-kind="js" data-copy="js/progress.js" aria-label="نسخ وسم progress.js" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="file-group">
+        <h4><span class="file-dot lib"></span> مكتبات مساعدة <small>4 ملفات</small></h4>
+        <ul class="file-list">
+          <li class="file-row">
+            <div class="file-info"><code>jquery-3.6.0.min.js</code><p>jQuery — تحتاجه معظم السكربتات.</p></div>
+            <button class="copy-btn" type="button" data-kind="js" data-copy="lib/jquery-3.6.0.min.js" aria-label="نسخ وسم jquery-3.6.0.min.js" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>vue-2.6.11.min.js</code><p>Vue 2 لبعض الودجات.</p></div>
+            <button class="copy-btn" type="button" data-kind="js" data-copy="lib/vue-2.6.11.min.js" aria-label="نسخ وسم vue-2.6.11.min.js" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>highlight-11.5.0.min.js</code><p>تلوين الشيفرة البرمجية.</p></div>
+            <button class="copy-btn" type="button" data-kind="js" data-copy="lib/highlight-11.5.0.min.js" aria-label="نسخ وسم highlight-11.5.0.min.js" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+          <li class="file-row">
+            <div class="file-info"><code>translate.js</code><p>ودجة ترجمة Google.</p></div>
+            <button class="copy-btn" type="button" data-kind="js" data-copy="lib/translate.js" aria-label="نسخ وسم translate.js" title="نسخ وسم الاستدعاء"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ</span></button>
+          </li>
+        </ul>
+      </div>
+
+      <p class="files-empty" hidden>لا توجد أداة مطابقة… جرب كلمة أخرى.</p>
+      <div class="files-note">
+        <svg class="icon" aria-hidden="true"><use href="#i-info"></use></svg>
+        <span>كل الملفات متاحة مباشرة عبر jsDelivr — لا حاجة إلى نسخها إلى مدونتك. زر «نسخ» ينسخ وسم الاستدعاء كاملا.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="install">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">التركيب</span>
+      <h2>أربع خطوات… <span class="hl">ومدونتك تتغير</span></h2>
+      <p>لا تحتاج إلى خبرة برمجية. كل ما تحتاجه نسخة احتياطية، ولصق سطرين في المكان الصحيح.</p>
+    </div>
+    <div class="install-grid">
+      <ol class="steps">
+        <li class="reveal">
+          <span class="step-num">01</span>
+          <h3>خذ نسخة احتياطية</h3>
+          <p>من لوحة Blogger: المظهر ← تعديل HTML ← نسخ احتياطي. خطوة صغيرة تحميك من أي خطأ.</p>
+        </li>
+        <li class="reveal">
+          <span class="step-num">02</span>
+          <h3>أضف الأنماط</h3>
+          <p>داخل <code>&lt;b:skin&gt;</code> أو قبل <code>&lt;/head&gt;</code>، ضع رابط CSS للأداة التي اخترتها.</p>
+        </li>
+        <li class="reveal">
+          <span class="step-num">03</span>
+          <h3>حمل JavaScript</h3>
+          <p>قبل <code>&lt;/body&gt;</code>، حمل jQuery أولا ثم سكربت الأداة. الترتيب مهم لتعمل معا.</p>
+        </li>
+        <li class="reveal">
+          <span class="step-num">04</span>
+          <h3>احفظ وعاين</h3>
+          <p>احفظ القالب، ثم افتح المدونة على الهاتف والحاسوب وتأكد من عمل الأداة كما تريد.</p>
+        </li>
+      </ol>
+      <div class="reveal">
+        <div class="code-card">
+          <div class="code-head">
+            <span class="code-dots"><i></i><i></i><i></i></span>
+            <span class="code-name">blogger-theme.html</span>
+            <button class="copy-code" type="button" data-copy-code="installSnippet"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-copy"></use></svg><span>نسخ الكود</span></button>
+          </div>
+<pre id="installSnippet" dir="ltr"><code><span class="c-comment">&lt;!-- ① في رأس القالب: أنماط الأداة --&gt;</span>
+<span class="c-tag">&lt;link</span> <span class="c-attr">rel</span>=<span class="c-str">"stylesheet"</span> <span class="c-attr">href</span>=<span class="c-str">"https://cdn.jsdelivr.net/gh/elkandoussi1/elhaqiba@main/css/TableOfContents.min.css"</span><span class="c-tag">&gt;</span>
+
+<span class="c-comment">&lt;!-- ② قبل إغلاق body: jQuery ثم الأداة --&gt;</span>
+<span class="c-tag">&lt;script</span> <span class="c-attr">src</span>=<span class="c-str">"https://cdn.jsdelivr.net/gh/elkandoussi1/elhaqiba@main/lib/jquery-3.6.0.min.js"</span><span class="c-tag">&gt;&lt;/script&gt;</span>
+<span class="c-tag">&lt;script</span> <span class="c-attr">src</span>=<span class="c-str">"https://cdn.jsdelivr.net/gh/elkandoussi1/elhaqiba@main/js/TableOfContents.min.js"</span><span class="c-tag">&gt;&lt;/script&gt;</span></code></pre>
+        </div>
+        <p class="code-note">
+          <svg class="icon" aria-hidden="true"><use href="#i-info"></use></svg>
+          <span>بدل اسم الملف في الرابط حسب الأداة التي تريدها. الملفات مصغرة وجاهزة؛ إن أردت التعديل عليها فاحتفظ بنسخة غير مصغرة.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="credits">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">الفضل لأهله</span>
+      <h2>على أكتاف <span class="hl">مبدعين</span></h2>
+      <p>بعض الأدوات مأخوذة من مصادرها الأصلية ثم عربت ونظمت. راجع رأس كل ملف لمعرفة مصدره وترخيصه.</p>
+    </div>
+    <div class="credits-grid">
+      <article class="credit reveal">
+        <span class="credit-mark">F</span>
+        <div><h3>Fineshop Design</h3><p>categoryPost.js وAutoChapters</p></div>
+      </article>
+      <article class="credit reveal">
+        <span class="credit-mark">I</span>
+        <div><h3>IDN Blog Pro</h3><p>idbprosafelink.js وAutoRelated</p></div>
+      </article>
+      <article class="credit reveal">
+        <span class="credit-mark">T</span>
+        <div><h3>Taufik Nurrohman</h3><p>RelatedPosts</p></div>
+      </article>
+      <article class="credit reveal">
+        <span class="credit-mark">B</span>
+        <div><h3>blustemy.io</h3><p>فكرة TableOfContents</p></div>
+      </article>
+      <article class="credit reveal">
+        <span class="credit-mark">P</span>
+        <div><h3>pronulleds</h3><p>progress.js</p></div>
+      </article>
+      <article class="credit reveal">
+        <span class="credit-mark">G</span>
+        <div><h3>رخصة GPL-3.0</h3><p>استعمل وعدل بحرية، مع الحفاظ على الحقوق. <a href="https://github.com/elkandoussi1/elhaqiba/blob/main/LICENSE" target="_blank" rel="noopener">اقرأ الرخصة</a>.</p></div>
+      </article>
+    </div>
+    <p class="credits-note">شكرا لكل من شارك عمله تحت ترخيص حر، وجعل تعريب الأدوات ممكنا.</p>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta reveal">
+      <div class="cta-copy">
+        <span class="kicker kicker-light">ابدأ الآن</span>
+        <h2>مدونتك تستحق لمسة أجمل.</h2>
+        <p>اختر أداة واحدة، جربها، ثم أضف ما يناسبك. الحقيبة مفتوحة للجميع، وكل ملف يشرح نفسه.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-gold" href="#files">تصفح الملفات <svg class="icon icon-xs" aria-hidden="true"><use href="#i-arrow-down"></use></svg></a>
+        <a class="btn btn-ghost" href="https://elkandoussi.blogspot.com/" target="_blank" rel="noopener">زيارة المدونة <svg class="icon icon-xs" aria-hidden="true"><use href="#i-external"></use></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="#top" aria-label="الحقيبة — أعلى الصفحة">
+        <span class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#i-book"></use></svg></span>
+        <span class="brand-text"><strong>الحقيبة</strong><small>أدوات Blogger العربية</small></span>
+      </a>
+      <p>قوالب وأدوات معربة لمدونات Blogger التعليمية. صغيرة الحجم، كبيرة الأثر، وبلا تعقيد.</p>
+    </div>
+    <div class="footer-col">
+      <h4>روابط</h4>
+      <a href="https://elkandoussi.blogspot.com/" target="_blank" rel="noopener">المدونة</a>
+      <a href="https://github.com/elkandoussi1/elhaqiba" target="_blank" rel="noopener">المستودع</a>
+      <a href="https://github.com/elkandoussi1" target="_blank" rel="noopener">الملف الشخصي</a>
+    </div>
+    <div class="footer-col">
+      <h4>المشروع</h4>
+      <a href="#install">طريقة التركيب</a>
+      <a href="https://github.com/elkandoussi1/elhaqiba/blob/main/LICENSE" target="_blank" rel="noopener">رخصة GPL-3.0</a>
+      <a href="https://github.com/elkandoussi1/elhaqiba/issues" target="_blank" rel="noopener">اقتراح أو ملاحظة</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© <span id="year">2026</span> أحمد القندوسي · جميع الحقوق محفوظة.</p>
+    <p>صنع بعناية في المغرب <span aria-hidden="true">🇲🇦</span></p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="العودة إلى الأعلى">
+  <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg>
+</button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var header = document.getElementById('siteHeader');
+  var progress = document.getElementById('progressBar');
+  var toTop = document.getElementById('toTop');
+  var menuBtn = document.getElementById('menuBtn');
+  var nav = document.getElementById('primaryNav');
+  var themeBtn = document.getElementById('themeToggle');
+  var toast = document.getElementById('toast');
+  var toastTimer;
+
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 2400);
+  }
+
+  function closeMenu() {
+    document.body.classList.remove('nav-open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  menuBtn.addEventListener('click', function () {
+    var open = document.body.classList.toggle('nav-open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a')) closeMenu();
+  });
+  document.addEventListener('click', function (e) {
+    if (document.body.classList.contains('nav-open') && !nav.contains(e.target) && !menuBtn.contains(e.target)) {
+      closeMenu();
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  function syncTheme() {
+    var dark = root.getAttribute('data-theme') === 'dark';
+    themeBtn.setAttribute('aria-label', dark ? 'تفعيل الوضع النهاري' : 'تفعيل الوضع الليلي');
+    themeBtn.setAttribute('title', dark ? 'الوضع النهاري' : 'الوضع الليلي');
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', dark ? '#07110f' : '#0b5c4f');
+  }
+  themeBtn.addEventListener('click', function () {
+    var dark = root.getAttribute('data-theme') === 'dark';
+    if (dark) root.removeAttribute('data-theme');
+    else root.setAttribute('data-theme', 'dark');
+    try { localStorage.setItem('haqiba-theme', dark ? 'light' : 'dark'); } catch (e) {}
+    syncTheme();
+  });
+  syncTheme();
+
+  function onScroll() {
+    var y = window.pageYOffset || root.scrollTop;
+    header.classList.toggle('scrolled', y > 24);
+    toTop.classList.toggle('show', y > 700);
+    var max = root.scrollHeight - window.innerHeight;
+    progress.style.width = (max > 0 ? Math.min(100, (y / max) * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  toTop.addEventListener('click', function () {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+  });
+
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var ro = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function (el) { ro.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  var navLinks = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
+  var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
+  if ('IntersectionObserver' in window && sections.length) {
+    var so = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(function (link) {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(function (section) { so.observe(section); });
+  }
+
+  var filter = document.getElementById('fileFilter');
+  var rows = Array.prototype.slice.call(document.querySelectorAll('.file-row'));
+  var groups = Array.prototype.slice.call(document.querySelectorAll('.file-group'));
+  var empty = document.querySelector('.files-empty');
+  if (filter) {
+    filter.addEventListener('input', function () {
+      var q = filter.value.trim().toLowerCase();
+      var visible = 0;
+      rows.forEach(function (row) {
+        var hay = row.querySelector('.file-info').innerText.toLowerCase();
+        var show = !q || hay.indexOf(q) !== -1;
+        row.hidden = !show;
+        if (show) visible++;
+      });
+      groups.forEach(function (group) {
+        var any = Array.prototype.some.call(group.querySelectorAll('.file-row'), function (row) { return !row.hidden; });
+        group.hidden = !any;
+      });
+      empty.hidden = visible > 0;
+    });
+  }
+
+  var BASE = 'https://cdn.jsdelivr.net/gh/elkandoussi1/elhaqiba@main/';
+  function fallbackCopy(text) {
+    var area = document.createElement('textarea');
+    area.value = text;
+    area.style.position = 'fixed';
+    area.style.top = '-1000px';
+    area.style.opacity = '0';
+    document.body.appendChild(area);
+    area.focus();
+    area.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(area);
+    return ok;
+  }
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text).then(function () { return true; }).catch(function () { return fallbackCopy(text); });
+    }
+    return Promise.resolve(fallbackCopy(text));
+  }
+
+  document.addEventListener('click', function (e) {
+    var copyBtn = e.target.closest ? e.target.closest('.copy-btn') : null;
+    if (copyBtn) {
+      var path = copyBtn.getAttribute('data-copy');
+      var kind = copyBtn.getAttribute('data-kind');
+      var url = BASE + path;
+      var snippet = kind === 'css'
+        ? '<link rel="stylesheet" href="' + url + '">'
+        : '<scr' + 'ipt src="' + url + '"></scr' + 'ipt>';
+      copyText(snippet).then(function (ok) {
+        showToast(ok ? (kind === 'css' ? 'نسخ وسم CSS — الصقه في رأس القالب' : 'نسخ وسم JavaScript — الصقه قبل إغلاق body') : 'تعذر النسخ، جرب مرة أخرى');
+        if (ok) {
+          copyBtn.classList.add('copied');
+          setTimeout(function () { copyBtn.classList.remove('copied'); }, 1600);
+        }
+      });
+      return;
+    }
+    var codeBtn = e.target.closest ? e.target.closest('.copy-code') : null;
+    if (codeBtn) {
+      var target = document.getElementById(codeBtn.getAttribute('data-copy-code'));
+      if (!target) return;
+      copyText(target.innerText).then(function (ok) {
+        showToast(ok ? 'نسخ الكود — جاهز للصق في قالبك' : 'تعذر النسخ، جرب مرة أخرى');
+        if (ok) {
+          codeBtn.classList.add('copied');
+          setTimeout(function () { codeBtn.classList.remove('copied'); }, 1600);
+        }
+      });
+    }
+  });
+
+  var year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
