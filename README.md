@@ -53,7 +53,7 @@
 | `js/NoInternetWidget.min.js` | تنبيه عند انقطاع الإنترنت. |
 | `js/RelatedPosts.min.js` | المقالات ذات الصلة. |
 | `js/TableOfContents.min.js` | بناء فهرس المحتويات. |
-| `js/categoryPost.js` | ودجة «مقالات التصنيف» مع تعريب التاريخ والوسوم. |
+| `js/categoryPost.js` | ودجة «مقالات التصنيف» بنصوص عربية أو إنجليزية حسب لغة المدونة. |
 | `js/progress.js` | شريط تقدم القراءة. |
 
 ### 📦 المكتبات `lib/`
