@@ -18,7 +18,7 @@
 
 ## ✦ عن الحقيبة
 
-مجموعة ملفات **CSS وJavaScript** جاهزة لتخصيص قالب **Bookmark** على Blogger وتعريبه: بطاقات المقالات، الفهرس، المقالات ذات الصلة، مشغل الموسيقى، عدّاد التنزيل، موافقة الكوكيز، حماية الروابط، الترجمة، تلوين الشيفرة، وشريط تقدم القراءة.
+مجموعة ملفات **CSS وJavaScript** جاهزة لتخصيص قالب **Bookmark** على Blogger وتعريبه: بطاقات المقالات، الفهرس، المقالات ذات الصلة، مشغل الموسيقى، عدّاد التنزيل، موافقة الكوكيز، الترجمة، تلوين الشيفرة، وشريط تقدم القراءة.
 
 > صفحة «عنّي» الشخصية انتقلت إلى [الملف الشخصي على GitHub](https://github.com/elkandoussi1). هذا المستودع مخصّص لأدوات القالب وملفاته فقط.
 
@@ -54,7 +54,6 @@
 | `js/RelatedPosts.min.js` | المقالات ذات الصلة. |
 | `js/TableOfContents.min.js` | بناء فهرس المحتويات. |
 | `js/categoryPost.js` | ودجة «مقالات التصنيف» مع تعريب التاريخ والوسوم. |
-| `js/idbprosafelink.js` | توليد روابط آمنة وحمايتها. |
 | `js/progress.js` | شريط تقدم القراءة. |
 
 ### 📦 المكتبات `lib/`
@@ -93,7 +92,7 @@
 بعض السكربتات مأخوذة من مصادرها الأصلية ومعرّبة هنا، ومنها:
 
 - **Fineshop Design** — `categoryPost.js` و`AutoChapters`.
-- **IDN Blog Pro** — `idbprosafelink.js` و`AutoRelated`.
+- **IDN Blog Pro** — `AutoRelated`.
 - **Taufik Nurrohman** — `RelatedPosts`.
 - **blustemy.io** — فكرة `TableOfContents`.
 - **pronulleds.blogspot.com** — `progress.js`.
