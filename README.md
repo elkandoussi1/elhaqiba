@@ -1,13 +1,13 @@
 <div align="center" markdown="1">
 
-# 📚 الحقيبة
+# 📚 ميزات وأدوات منصة أحمد القندوسي
 
-**قوالب وأدوات معرّبة لمدونات Blogger التعليمية**
+**صيغ الكتابة في قالب elkandoussi، وأدوات أونلاين، ومكتبة ملفات لمدونات Blogger**
 
 <p>
-  <a href="https://elkandoussi1.github.io/elhaqiba/"><kbd>📖 التوثيق</kbd></a>
+  <a href="https://elkandoussi1.github.io/elhaqiba/"><kbd>📖 صفحة الميزات</kbd></a>
   &nbsp;
-  <a href="https://elkandoussi.blogspot.com/"><kbd>🌐 المدونة</kbd></a>
+  <a href="https://elkandoussi.blogspot.com/"><kbd>🌐 المنصة</kbd></a>
   &nbsp;
   <a href="https://github.com/elkandoussi1/elhaqiba/blob/main/LICENSE"><kbd>⚖️ GPL-3.0</kbd></a>
 </p>
@@ -18,7 +18,7 @@
 
 ## ✦ عن الحقيبة
 
-مجموعة ملفات **CSS وJavaScript** جاهزة لتخصيص قالب **Bookmark** على Blogger وتعريبه: بطاقات المقالات، الفهرس، المقالات ذات الصلة، مشغل الموسيقى، عدّاد التنزيل، موافقة الكوكيز، الترجمة، تلوين الشيفرة، وشريط تقدم القراءة.
+مجموعة ملفات **CSS وJavaScript** جاهزة لتخصيص قالب **elkandoussi** على Blogger وتعريبه: بطاقات المقالات، الفهرس، المقالات ذات الصلة، مشغل الموسيقى، عدّاد التنزيل، موافقة الكوكيز، الترجمة، تلوين الشيفرة، وشريط تقدم القراءة.
 
 > صفحة «عنّي» الشخصية انتقلت إلى [الملف الشخصي على GitHub](https://github.com/elkandoussi1). هذا المستودع مخصّص لأدوات القالب وملفاته فقط.
 
