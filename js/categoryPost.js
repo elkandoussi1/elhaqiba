@@ -6,7 +6,8 @@
  * (<html lang>), or the `lang` option. Any text can be overridden with `msg: {...}`.
  *
  * categoryPost({home, title, label, id, time:'published'|'updated', pstNm, thmbSize,
- *               snptLnth, pgn, ldCl, card:'home'|'classic', lang:'ar'|'en', msg:{...}})
+ *               snptLnth, pgn, ldCl, card:'home'|'classic', lang:'ar'|'en', msg:{...}, done:function})
+ * done: يستدعى بعد انتهاء التحميل (نجاحا أو فشلا) لتحميل الأقسام واحدا بعد الآخر.
  */
 var categoryPostI18n = {
   ar: {
@@ -68,7 +69,8 @@ function categoryPost(opts) {
 
   var home = String(cfg.home).replace(/\/$/, '').replace(/.*?:\/\//g, '//') + '/';
   var hasLabel = cfg.label != null && String(cfg.label).length > 0;
-  var url = home + 'feeds/posts/default' + encodeURI(hasLabel ? '/-/' + cfg.label : '') +
+  // summary أخف بكثير من default (لا يحمل نص المقال كاملا)، ويكفي للمقتطف والصورة
+  var url = home + 'feeds/posts/summary' + encodeURI(hasLabel ? '/-/' + cfg.label : '') +
     '?alt=json&orderby=' + (cfg.time == 'updated' ? 'updated' : 'published') + '&max-results=' + cfg.pstNm;
 
   var ICON_CHAT = "<svg class='line' viewBox='0 0 24 24'><g transform='translate(2.000000, 2.000000)'><path d='M17.0710351,17.0698449 C14.0159481,20.1263505 9.48959549,20.7867004 5.78630747,19.074012 C5.23960769,18.8538953 1.70113357,19.8338667 0.933341969,19.0669763 C0.165550368,18.2990808 1.14639409,14.7601278 0.926307229,14.213354 C-0.787154393,10.5105699 -0.125888852,5.98259958 2.93020311,2.9270991 C6.83146881,-0.9756997 13.1697694,-0.9756997 17.0710351,2.9270991 C20.9803405,6.8359285 20.9723008,13.1680512 17.0710351,17.0698449 Z'></path></g></svg>";
@@ -111,8 +113,9 @@ function categoryPost(opts) {
         if (cats[i].term == 'Sponsored') isSponsored = true;
       }
       var comments = h.thr$total ? String(h.thr$total.$t) : '';
-      var snippet = ('content' in h && cfg.snptLnth > 0)
-        ? h.content.$t.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '').replace(/<style.*?<\/style>/g, '').replace(/<\!--.*?-->/g, '')
+      var body = h.content || h.summary;
+      var snippet = (body && cfg.snptLnth > 0)
+        ? body.$t.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '').replace(/<style.*?<\/style>/g, '').replace(/<\!--.*?-->/g, '')
             .split("<a name='more'>")[0].replace(/(<([^>]+)>)/gi, '').replace(/(\r\n|\n|\r)/gm, '').substring(0, cfg.snptLnth)
         : '';
       var img = h.media$thumbnail ? h.media$thumbnail.url : '';
@@ -145,13 +148,13 @@ function categoryPost(opts) {
       var src = h.media$thumbnail ? h.media$thumbnail.url : '';
       if (h.content && src == '') { var m2 = /<img +(.*?)src=(['"])([^'"]+?)(['"])(.*?) *\/?>/i.exec(h.content.$t); src = m2 && m2[3] ? m2[3] : ''; }
       var S = parseInt(cfg.thmbSize, 10) || 600, isG = /blogspot|googleusercontent/.test(src);
-      var big = isG ? crop(src, 'w' + S + '-h' + Math.round(S / 2) + '-p-k-no-nu-rw-e30') : src.replace(/.*?:\/\//g, '//');
+      var big = isG ? crop(src, 'w' + S + '-h' + Math.round(S / 2) + '-p-k-no-nu-rw-e365-l75') : src.replace(/.*?:\/\//g, '//');
       var small = isG ? crop(src, 'w240-h240-p-k-no-nu') : big;
       var au = h.author && h.author[0] || {}, auName = au.name && au.name.$t || '', auImg = au.gd$image && au.gd$image.src || '';
       auImg = auImg && !/blank\.gif|b16-rounded/.test(auImg) ? crop(auImg, 'w20-h20-p-k-no-nu') : '';
       var txt = snippet;
-      if ('content' in h && cfg.snptLnth > 0) {
-        txt = h.content.$t.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '').replace(/<style.*?<\/style>/g, '').replace(/<\!--.*?-->/g, '')
+      if (body && cfg.snptLnth > 0) {
+        txt = body.$t.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '').replace(/<style.*?<\/style>/g, '').replace(/<\!--.*?-->/g, '')
           .split("<a name='more'>")[0].replace(/(<([^>]+)>)/gi, ' ').replace(/\s+/g, ' ').trim();
         var tmp = document.createElement('textarea'); tmp.innerHTML = txt; txt = tmp.value;
         if (txt.length > cfg.snptLnth) txt = txt.slice(0, cfg.snptLnth - 1) + '…';
@@ -193,15 +196,20 @@ function categoryPost(opts) {
     }
   }
 
-  var x = new XMLHttpRequest();
-  x.onreadystatechange = function () {
-    if (x.readyState != 4) return;
-    if (x.status == 200) { try { render(JSON.parse(x.responseText)); } catch (e) { console.warn(e); } }
-    else {
-      console.log('Failed to get Blog Feeds with status: ' + x.status);
+  // عند 503 أو 429 (ضغط على خادم Blogger) أو انقطاع: إعادة المحاولة 3 مرات بانتظار متزايد قبل إظهار رسالة الفشل
+  var tries = 0;
+  function finish() { if (typeof cfg.done == 'function') { try { cfg.done(); } catch (e) {} } }
+  function load() {
+    var x = new XMLHttpRequest();
+    x.onreadystatechange = function () {
+      if (x.readyState != 4) return;
+      if (x.status == 200) { try { render(JSON.parse(x.responseText)); } catch (e) { console.warn(e); } finish(); return; }
+      if ((x.status == 503 || x.status == 429 || x.status == 0) && tries < 3) { tries++; setTimeout(load, 1500 * Math.pow(2, tries - 1)); return; }
       if (box() != null) box().innerHTML = "<div class='note wr'>" + esc(msg.loadFailed) + '</div>';
-    }
-  };
-  x.open('GET', url, true);
-  x.send();
+      finish();
+    };
+    x.open('GET', url, true);
+    x.send();
+  }
+  load();
 }
