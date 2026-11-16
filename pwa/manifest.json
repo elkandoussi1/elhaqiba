@@ -1,0 +1,26 @@
+{
+  "id": "https://elkandoussi.blogspot.com/",
+  "name": "أحمد القندوسي",
+  "short_name": "القندوسي",
+  "description": "منصة أحمد القندوسي التعليمية: دروس ومقالات وأدوات للأساتذة والمتعلمين.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "https://elkandoussi.blogspot.com/?utm_source=pwa",
+  "scope": "https://elkandoussi.blogspot.com/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#0B5A42",
+  "categories": ["education", "books"],
+  "icons": [
+    { "src": "https://cdn.jsdelivr.net/gh/elkandoussi1/elhaqiba@main/pwa/icon-96.png", "sizes": "96x96", "type": "image/png", "purpose": "any" },
+    { "src": "https://cdn.jsdelivr.net/gh/elkandoussi1/elhaqiba@main/pwa/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "https://cdn.jsdelivr.net/gh/elkandoussi1/elhaqiba@main/pwa/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "https://cdn.jsdelivr.net/gh/elkandoussi1/elhaqiba@main/pwa/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "البحث", "url": "https://elkandoussi.blogspot.com/search", "icons": [{ "src": "https://cdn.jsdelivr.net/gh/elkandoussi1/elhaqiba@main/pwa/icon-96.png", "sizes": "96x96" }] },
+    { "name": "أرشيف الموقع", "url": "https://elkandoussi.blogspot.com/p/sitemap.html", "icons": [{ "src": "https://cdn.jsdelivr.net/gh/elkandoussi1/elhaqiba@main/pwa/icon-96.png", "sizes": "96x96" }] }
+  ]
+}
