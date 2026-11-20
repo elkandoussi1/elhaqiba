@@ -1,0 +1,26 @@
+{
+  "id": "https://denmarkinsider.blogspot.com/",
+  "name": "Denmark Insider",
+  "short_name": "Denmark Insider",
+  "description": "Din guide til livet i Danmark: praktiske guides om at flytte hertil, arbejde, studere og forstå hverdagen.",
+  "lang": "da",
+  "dir": "ltr",
+  "start_url": "https://denmarkinsider.blogspot.com/?utm_source=pwa",
+  "scope": "https://denmarkinsider.blogspot.com/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#C8102E",
+  "categories": ["travel", "lifestyle", "education"],
+  "icons": [
+    { "src": "https://cdn.jsdelivr.net/gh/elkandoussi1/elhaqiba@f9ed90217b867a6782f61578cc3e7517823ab3a3/pwa/denmarkinsider/icon-96.png", "sizes": "96x96", "type": "image/png", "purpose": "any" },
+    { "src": "https://cdn.jsdelivr.net/gh/elkandoussi1/elhaqiba@f9ed90217b867a6782f61578cc3e7517823ab3a3/pwa/denmarkinsider/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "https://cdn.jsdelivr.net/gh/elkandoussi1/elhaqiba@f9ed90217b867a6782f61578cc3e7517823ab3a3/pwa/denmarkinsider/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "https://cdn.jsdelivr.net/gh/elkandoussi1/elhaqiba@f9ed90217b867a6782f61578cc3e7517823ab3a3/pwa/denmarkinsider/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Søg", "url": "https://denmarkinsider.blogspot.com/search", "icons": [{ "src": "https://cdn.jsdelivr.net/gh/elkandoussi1/elhaqiba@f9ed90217b867a6782f61578cc3e7517823ab3a3/pwa/denmarkinsider/icon-96.png", "sizes": "96x96" }] },
+    { "name": "Sitemap", "url": "https://denmarkinsider.blogspot.com/p/sitemap.html", "icons": [{ "src": "https://cdn.jsdelivr.net/gh/elkandoussi1/elhaqiba@f9ed90217b867a6782f61578cc3e7517823ab3a3/pwa/denmarkinsider/icon-96.png", "sizes": "96x96" }] }
+  ]
+}
