@@ -1,0 +1,26 @@
+{
+  "id": "https://theeverydayaiguide.blogspot.com/",
+  "name": "Everyday AI Guide",
+  "short_name": "Everyday AI",
+  "description": "Simple, practical guides to the best AI tools for writing, work, learning and productivity. No hype, just what works.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "https://theeverydayaiguide.blogspot.com/?utm_source=pwa",
+  "scope": "https://theeverydayaiguide.blogspot.com/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#4F46E5",
+  "categories": ["education", "productivity", "utilities"],
+  "icons": [
+    { "src": "https://cdn.jsdelivr.net/gh/elkandoussi1/elhaqiba@c4a5c3faf5485bceb277bfaf39f17daab3b446cd/pwa/everydayaiguide/icon-96.png", "sizes": "96x96", "type": "image/png", "purpose": "any" },
+    { "src": "https://cdn.jsdelivr.net/gh/elkandoussi1/elhaqiba@c4a5c3faf5485bceb277bfaf39f17daab3b446cd/pwa/everydayaiguide/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "https://cdn.jsdelivr.net/gh/elkandoussi1/elhaqiba@c4a5c3faf5485bceb277bfaf39f17daab3b446cd/pwa/everydayaiguide/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "https://cdn.jsdelivr.net/gh/elkandoussi1/elhaqiba@c4a5c3faf5485bceb277bfaf39f17daab3b446cd/pwa/everydayaiguide/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Search", "url": "https://theeverydayaiguide.blogspot.com/search", "icons": [{ "src": "https://cdn.jsdelivr.net/gh/elkandoussi1/elhaqiba@c4a5c3faf5485bceb277bfaf39f17daab3b446cd/pwa/everydayaiguide/icon-96.png", "sizes": "96x96" }] },
+    { "name": "AI Tools", "url": "https://theeverydayaiguide.blogspot.com/search/label/AI%20Tools", "icons": [{ "src": "https://cdn.jsdelivr.net/gh/elkandoussi1/elhaqiba@c4a5c3faf5485bceb277bfaf39f17daab3b446cd/pwa/everydayaiguide/icon-96.png", "sizes": "96x96" }] }
+  ]
+}
