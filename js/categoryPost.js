@@ -1,4 +1,4 @@
-/* Category Post Widget — نسخة نظيفة ثنائية اللغة (عربي/إنجليزي)
+/* Category Post Widget — نسخة نظيفة متعددة اللغات (عربي/إنجليزي/ياباني)
  * Based on the Category Post widget by Fineshop Design (Median UI / Fletro Pro / iMagz).
  * Cards use the same markup as the theme's homepage «Latest posts» cards
  * (views counter, comments, read-later button, author badge, 2:1 thumbnail);
@@ -6,7 +6,7 @@
  * (<html lang>), or the `lang` option. Any text can be overridden with `msg: {...}`.
  *
  * categoryPost({home, title, label, id, time:'published'|'updated', pstNm, thmbSize,
- *               snptLnth, pgn, ldCl, card:'home'|'classic', lang:'ar'|'en', msg:{...}, done:function})
+ *               snptLnth, pgn, ldCl, card:'home'|'classic', lang:'ar'|'en'|'ja', msg:{...}, done:function})
  * done: يستدعى بعد انتهاء التحميل (نجاحا أو فشلا) لتحميل الأقسام واحدا بعد الآخر.
  */
 var categoryPostI18n = {
@@ -45,6 +45,25 @@ var categoryPostI18n = {
     noPostsLabel: "No Post was found with label '{label}'.",
     noPosts: 'No Post was found.',
     loadFailed: 'Failed to load Posts :('
+  },
+  ja: {
+    months: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+    ymd: true,
+    published: '公開日: ',
+    updated: '更新日: ',
+    label: 'カテゴリー',
+    sponsored: 'PR',
+    noImage: '画像なし',
+    comments: 'コメント',
+    readMore: '続きを読む',
+    keepReading: '続きを読む',
+    readLater: 'あとで読む',
+    publishedOn: '公開日',
+    updatedOn: '更新日',
+    viewMore: 'もっと見る',
+    noPostsLabel: '「{label}」の記事はまだありません。',
+    noPosts: '記事はまだありません。',
+    loadFailed: '記事を読み込めませんでした :('
   }
 };
 
@@ -64,6 +83,7 @@ function categoryPost(opts) {
   function box() { return document.getElementById(cfg.id); }
   function date(iso) {
     iso = String(iso).substring(0, 10);
+    if (msg.ymd) return iso.substring(0, 4) + '年' + parseInt(iso.substring(5, 7), 10) + '月' + parseInt(iso.substring(8, 10), 10) + '日';
     return msg.months[parseInt(iso.substring(5, 7), 10) - 1] + ' ' + iso.substring(8, 10) + ', ' + iso.substring(0, 4);
   }
 
