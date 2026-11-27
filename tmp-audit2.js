@@ -15,7 +15,7 @@ for(const e of all){ const html=(e.content||{}).$t||''; const d=new DOMParser().
 const ignore=/^(separator|tr_bq|MsoNormal|Apple-|post-|separator|tr-caption|tr_|dir|ltr|rtl)$/;
 const missing=Object.entries(classUse).filter(([c])=>!new RegExp('\\.'+c.replace(/[-\/\\^$*+?.()|[\]{}]/g,'\\$&')+'(?![\\w-])').test(css)).map(([c,s])=>c+' ('+s.size+') '+[...s].slice(0,2).join(','));
 const broken=[]; const uniq=[...new Map(imgs.map(x=>[x[0],x])).values()];
-for(let i=0;i<uniq.length;i+=12){ await Promise.all(uniq.slice(i,i+12).map(([src,p])=>new Promise(ok=>{const im=new Image(); const t=setTimeout(()=>{broken.push('timeout '+src.slice(0,90)+' @'+p);ok()},15000); im.onload=()=>{clearTimeout(t);ok()}; im.onerror=()=>{clearTimeout(t);broken.push(src.slice(0,100)+' @'+p);ok()}; im.src=src;}))); }
+for(let i=0;i<uniq.length;i+=4){ await Promise.all(uniq.slice(i,i+4).map(([src,p])=>new Promise(ok=>{const im=new Image(); const t=setTimeout(()=>{broken.push('timeout '+src.slice(0,90)+' @'+p);ok()},25000); im.onload=()=>{clearTimeout(t);ok()}; im.onerror=()=>{clearTimeout(t);broken.push(src.slice(0,100)+' @'+p);ok()}; im.src=src;}))); }
 return {cssLen:css.length, classes:Object.keys(classUse).length, missing, imgs:uniq.length, broken};
 };
 window.__res2=null; window.__audit2().then(r=>window.__res2=r).catch(e=>window.__res2='ERR '+e);
